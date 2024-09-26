@@ -3,12 +3,12 @@ import React, { useEffect, useRef } from "react";
 import * as echarts from "echarts";
 
 export default function Bar({ style, xData, sData, title }) {
-  const domRef = useRef();
+  const domRef = useRef(null);
 
   useEffect(() => {
     const chartInit = () => {
       // 基于准备好的dom，初始化echarts实例
-      var myChart = echarts.init(domRef.current);
+      const myChart = echarts.init(domRef.current);
       // 绘制图表
       myChart.setOption({
         title: {
